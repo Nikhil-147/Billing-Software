@@ -1,0 +1,87 @@
+Here's a README file tailored for your project:
+
+---
+
+# Billing Software Application
+
+This is a PySide6-based GUI application for managing billing slips. It enables users to add items, calculate total amounts, save billing details into a database, and retrieve previous bills. The application is intuitive and user-friendly, with a sleek interface.
+
+---
+
+## Features
+- **Customer Information:** Input and store customer name and phone number.
+- **Product Details:** Add product names, rates, and quantities.
+- **Bill Generation:** Calculate the total bill and generate an itemized receipt.
+- **Database Integration:** Save bills and retrieve previously saved bills from a MySQL database.
+- **Clear Functionality:** Reset input fields to prepare for a new bill.
+- **Exit Option:** Close the application easily.
+
+---
+
+## Requirements
+To run this application, ensure you have the following installed:
+- Python 3.x
+- PySide6
+- pymysql
+- MySQL database (pre-configured with a `shop` database and a `bills` table)
+
+---
+
+## Setup Instructions
+1. **Clone this repository**:
+   ```bash
+   git clone <repository-URL>
+   cd BillingSoftware
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pip install PySide6 pymysql
+   ```
+
+3. **Set up MySQL**:
+   - Create a database called `shop`.
+   - Create a table using the SQL query:
+     ```sql
+     CREATE TABLE bills (
+       bill_no VARCHAR(50),
+       customer_name VARCHAR(255),
+       phone VARCHAR(15),
+       item VARCHAR(255),
+       rate FLOAT,
+       quantity INT,
+       total FLOAT
+     );
+     ```
+   - Update the MySQL credentials in the `save_bill()` and `retrieve_bills()` functions if necessary.
+
+4. **Run the application**:
+   ```bash
+   python main.py
+   ```
+
+---
+
+## Usage
+1. Launch the application.
+2. Input customer details: name and phone number.
+3. Add product details (name, rate, and quantity) and click **Add Item**.
+4. Click **Generate Bill** to calculate the total amount and save the bill.
+5. Use **Retrieve Bills** to view past bills stored in the database.
+6. Use **Clear** to reset fields for a new transaction.
+7. Exit the application using the **Exit** button.
+
+---
+
+## Screenshots
+Add screenshots of the application (optional).
+
+---
+
+## Notes
+- Ensure the MySQL service is running while using the app.
+- Error messages will be displayed for invalid inputs or connection issues.
+
+---
+
+Feel free to tweak this as needed! Let me know if you'd like help refining it further. 🚀
